@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>우리 부모님 폰 3G 종료 점검기</title>
+<meta name="description" content="부모님 폰이 3G 종료의 영향을 받는지 기종을 검색해 바로 확인해요.">
+<style>
+/* Hallmark · shape: Tool sheet · genre: editorial · theme: Editorial (deal 1/3, seed prompt-2b25·3fe22b9c·2026-11-06·r0) · job: try · draw: manual
+ * hero: Stage, headline then the form itself · nav: wordmark only · footer: ruled colophon · imagery: none, the result card is the signature · signature: the one large verdict word after three taps
+ * axes: light/display-condensed/chromatic-green · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E3 S4 R4 V3 · weakest: E, system Korean sans replaces the dealt display face to avoid external fonts, so weight and size carry the voice */
+:root {
+  color-scheme: light;
+  --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px;
+  --text-md: 1.125rem; --text-lg: 1.375rem; --text-xl: 1.625rem; --text-xs: 1rem;
+  --text-display: clamp(2.5rem, 9vw, 4rem); --text-verdict: clamp(3.5rem, 16vw, 6rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --dur-micro: 120ms; --dur-short: 220ms;
+  --color-paper: oklch(97% 0.007 86); --color-paper-2: oklch(94% 0.010 86); --color-paper-3: oklch(91% 0.012 84);
+  --color-ink: oklch(16% 0.012 280); --color-ink-2: oklch(29% 0.011 280); --color-muted: oklch(44% 0.010 75);
+  --color-rule: oklch(85% 0.009 85); --color-rule-2: oklch(64% 0.010 80);
+  --color-accent: oklch(49% 0.130 152); --color-accent-ink: oklch(98% 0.005 88); --color-focus: oklch(52% 0.135 152);
+  --color-bad: oklch(48% 0.19 27); --color-warn: oklch(46% 0.12 70); --color-good: oklch(44% 0.12 150);
+  --font-display: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", ui-sans-serif, sans-serif;
+  --font-body: var(--font-display);
+  --rule-hair: 1px; --rule-heavy: 4px;
+  --container: 720px; --gutter: 20px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.6; -webkit-font-smoothing: antialiased; word-break: keep-all; }
+html { scrollbar-color: var(--color-muted) var(--color-paper); }
+::selection { background: color-mix(in oklab, var(--color-accent) 22%, transparent); }
+input { caret-color: var(--color-accent); }
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-color: var(--color-accent); }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+h1 { font-size: var(--text-display); line-height: 1.1; }
+h2 { font-size: var(--text-xl); }
+p { margin: 0; text-wrap: pretty; }
+button, input, select { font: inherit; }
+[hidden] { display: none !important; }
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.mast { border-bottom: var(--rule-hair) solid var(--color-rule-2); }
+.mast .container { padding-block: var(--space-sm); font-weight: 700; color: var(--color-ink-2); }
+
+.hero { padding-block: var(--space-xl) var(--space-xl); }
+.status { margin-top: var(--space-md); font-size: var(--text-lg); line-height: 1.45; color: var(--color-ink-2); }
+.badge { display: inline-block; margin-top: var(--space-sm); padding: var(--space-2xs) var(--space-sm); background: var(--color-accent); color: var(--color-accent-ink); font-weight: 700; font-size: var(--text-xs); }
+.sample-note { margin-top: var(--space-sm); padding: var(--space-xs) var(--space-sm); border: var(--rule-hair) solid var(--color-warn); color: var(--color-warn); font-weight: 700; }
+
+.form { margin-top: var(--space-xl); padding: var(--space-lg) var(--gutter); background: var(--color-paper-2); border-top: var(--rule-heavy) solid var(--color-ink); display: grid; gap: var(--space-xl); }
+.field { border: 0; margin: 0; padding: 0; min-width: 0; }
+.field > legend, .field > label.q { display: block; padding: 0; margin-bottom: var(--space-sm); font-weight: 800; font-size: var(--text-lg); }
+.hint { color: var(--color-muted); font-weight: 400; font-size: var(--text-xs); display: block; }
+.search { position: relative; }
+.search input { width: 100%; height: 64px; padding: 0 var(--space-md); font-size: var(--text-lg); background: var(--color-paper); color: var(--color-ink); border: 2px solid var(--color-rule-2); border-radius: 0; transition: border-color var(--dur-micro) var(--ease-out); }
+.search input:hover { border-color: var(--color-ink-2); }
+.search input:focus-visible { border-color: var(--color-ink); outline-offset: 0; }
+.list { list-style: none; margin: 0; padding: 0; position: absolute; z-index: 10; inset-inline: 0; top: 100%; background: var(--color-paper); border: 2px solid var(--color-ink); border-top: 0; max-height: 320px; overflow: auto; }
+.list li { padding: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); cursor: pointer; font-size: var(--text-lg); }
+.list li:first-child { border-top: 0; }
+.list li small { display: block; color: var(--color-muted); font-size: var(--text-xs); }
+.list li[aria-selected="true"], .list li:hover { background: var(--color-paper-3); }
+.chosen { margin-top: var(--space-sm); font-weight: 700; color: var(--color-accent); }
+.unknown { margin-top: var(--space-sm); background: none; border: 0; padding: var(--space-xs) 0; min-height: 48px; color: var(--color-ink-2); text-decoration: underline; text-underline-offset: 0.18em; cursor: pointer; font-size: var(--text-md); }
+.unknown:hover { text-decoration-color: var(--color-accent); }
+
+.opts { display: grid; gap: var(--space-xs); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.opts.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.opt { position: relative; }
+.opt input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.opt span { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 64px; padding: var(--space-xs); background: var(--color-paper); border: 2px solid var(--color-rule-2); font-weight: 700; font-size: var(--text-lg); transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out); }
+.opt input:hover + span { border-color: var(--color-ink-2); }
+.opt input:checked + span { background: var(--color-ink); color: var(--color-paper); border-color: var(--color-ink); }
+.opt input:focus-visible + span { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+
+.go { min-height: 68px; width: 100%; border: 0; border-radius: 0; background: var(--color-ink); color: var(--color-paper); font-weight: 800; font-size: var(--text-xl); cursor: pointer; transition: background-color var(--dur-micro) var(--ease-out); }
+.go:hover { background: var(--color-ink-2); }
+.go:disabled { background: var(--color-paper-3); color: var(--color-muted); cursor: not-allowed; }
+.go:active { background: var(--color-accent); }
+
+.result { padding-block: var(--space-xl); scroll-margin-top: var(--space-md); }
+.card { border-top: var(--rule-heavy) solid var(--tone); padding-top: var(--space-md); --tone: var(--color-ink); }
+.card[data-level="bad"] { --tone: var(--color-bad); }
+.card[data-level="warn"] { --tone: var(--color-warn); }
+.card[data-level="good"] { --tone: var(--color-good); }
+.verdict { font-family: var(--font-display); font-weight: 800; font-size: var(--text-verdict); line-height: 1.05; letter-spacing: -0.03em; color: var(--tone); }
+.card .which { margin-top: var(--space-sm); font-weight: 700; color: var(--color-ink-2); }
+.reason { margin-top: var(--space-md); font-size: var(--text-xl); line-height: 1.4; font-weight: 700; }
+.block { margin-top: var(--space-xl); }
+.block h3 { font-size: var(--text-lg); padding-bottom: var(--space-xs); border-bottom: var(--rule-hair) solid var(--color-rule-2); }
+.block ol { margin: var(--space-md) 0 0; padding-left: 1.6em; display: grid; gap: var(--space-sm); font-size: var(--text-lg); line-height: 1.5; }
+.block p { margin-top: var(--space-sm); font-size: var(--text-lg); line-height: 1.5; max-width: 50ch; }
+.plan { margin-top: var(--space-lg); padding: var(--space-md); background: var(--color-paper-2); border-left: var(--rule-heavy) solid var(--color-warn); font-size: var(--text-lg); font-weight: 700; }
+.call { margin-top: var(--space-xl); padding: var(--space-md); background: var(--color-ink); color: var(--color-paper); font-size: var(--text-xl); font-weight: 800; }
+.share { margin-top: var(--space-xl); display: grid; gap: var(--space-sm); }
+.share button { min-height: 64px; border: 2px solid var(--color-ink); border-radius: 0; background: var(--color-paper); color: var(--color-ink); font-weight: 800; font-size: var(--text-lg); cursor: pointer; transition: background-color var(--dur-micro) var(--ease-out); }
+.share button:hover { background: var(--color-paper-3); }
+.toast { font-weight: 700; color: var(--color-accent); min-height: 1.6em; }
+
+.band { background: var(--color-paper-2); border-top: var(--rule-heavy) solid var(--color-ink); padding-block: var(--space-xl); }
+.band h2 { font-size: var(--text-lg); }
+.band p { margin-top: var(--space-xs); color: var(--color-ink-2); }
+.soon { display: inline-block; margin-top: var(--space-md); min-height: 56px; padding: 0 var(--space-lg); line-height: 56px; border: 2px dashed var(--color-rule-2); color: var(--color-muted); font-weight: 700; }
+details { margin-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule-2); }
+summary { padding: var(--space-md) 0; min-height: 56px; font-weight: 800; font-size: var(--text-lg); cursor: pointer; }
+details ul { list-style: none; margin: 0; padding: 0 0 var(--space-md); display: grid; gap: var(--space-sm); }
+details .sum { padding-bottom: var(--space-md); }
+.tag { font-weight: 800; }
+.tag.yes { color: var(--color-good); }
+.tag.no { color: var(--color-warn); }
+
+footer { border-top: var(--rule-heavy) solid var(--color-ink); padding-block: var(--space-xl) var(--space-2xl); color: var(--color-ink-2); }
+footer h2 { font-size: var(--text-lg); }
+footer ul { margin: var(--space-sm) 0 0; padding-left: 1.2em; display: grid; gap: var(--space-xs); }
+footer .legal { margin-top: var(--space-lg); font-weight: 700; color: var(--color-ink); }
+footer .upd { margin-top: var(--space-xs); color: var(--color-muted); font-size: var(--text-xs); }
+
+@media (min-width: 40rem) { :root { --gutter: 32px; --text-md: 1.25rem; } .share { grid-template-columns: 1fr 1fr; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<header class="mast"><div class="container">3G 종료 점검기</div></header>
+
+<main>
+<section class="hero container">
+  <h1>우리 부모님 폰, 3G 종료 괜찮을까요?</h1>
+  <p class="status" id="status">불러오는 중이에요.</p>
+  <span class="badge">확정되지 않은 일정은 '예정'으로 적어요</span>
+  <p class="sample-note" id="sampleNote" hidden>지금은 예시 자료예요. 실제 정보가 아니에요.</p>
+  <noscript><p class="sample-note">이 점검기는 자바스크립트가 켜져 있어야 해요. 대신 통신사 고객센터 114로 전화해 물어보세요.</p></noscript>
+
+  <form class="form" id="form" autocomplete="off" novalidate>
+    <div class="field">
+      <label class="q" for="q">1. 폰 기종 <span class="hint">이름이나 모델 번호를 쓰세요. 예: 갤럭시 S5, SM-G900S</span></label>
+      <div class="search">
+        <input id="q" type="text" role="combobox" aria-expanded="false" aria-controls="list" aria-autocomplete="list" enterkeyhint="search" autocapitalize="off" spellcheck="false">
+        <ul class="list" id="list" role="listbox" hidden></ul>
+      </div>
+      <p class="chosen" id="chosen" hidden></p>
+      <button type="button" class="unknown" id="dontKnow">기종을 모르겠어요</button>
+    </div>
+
+    <fieldset class="field">
+      <legend>2. 통신사</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="carrier" value="SKT"><span>SKT</span></label>
+        <label class="opt"><input type="radio" name="carrier" value="KT"><span>KT</span></label>
+        <label class="opt"><input type="radio" name="carrier" value="LGU+"><span>LG유플러스</span></label>
+        <label class="opt"><input type="radio" name="carrier" value="알뜰폰" checked><span>알뜰폰, 모름</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="field">
+      <legend>3. 지금 3G 요금제인가요?</legend>
+      <div class="opts three">
+        <label class="opt"><input type="radio" name="plan" value="yes"><span>예</span></label>
+        <label class="opt"><input type="radio" name="plan" value="no"><span>아니오</span></label>
+        <label class="opt"><input type="radio" name="plan" value="unknown" checked><span>모름</span></label>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="go">점검하기</button>
+  </form>
+</section>
+
+<section class="result container" id="result" tabindex="-1" aria-live="polite" hidden></section>
+
+<section class="band" aria-labelledby="alarmH">
+  <div class="container">
+    <h2 id="alarmH">일정 발표 알림 받기</h2>
+    <p>발표가 나면 문자나 메일로 알려 드릴 예정이에요.</p>
+    <span class="soon">준비 중</span>
+    <details id="timeline">
+      <summary>3G 종료 일정 보기</summary>
+      <p class="sum" id="summary"></p>
+      <ul id="dates"></ul>
+    </details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <h2>출처</h2>
+    <ul id="sources"></ul>
+    <p class="legal">통신사 공지가 우선합니다.</p>
+    <p class="upd">마지막 갱신일 <span id="updated">-</span></p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const LEVEL = {
+    '영향 큼': { key: 'bad', word: '영향 큼' },
+    '영향 가능': { key: 'warn', word: '확인 필요' },
+    '영향 없음': { key: 'good', word: '괜찮아요' }
+  };
+  const CARRIER_LABEL = { 'SKT': 'SKT', 'KT': 'KT', 'LGU+': 'LG유플러스', '알뜰폰': '알뜰폰' };
+  let facts = null, phones = [], chosen = null, active = -1, shown = [];
+
+  const norm = (s) => String(s).toLowerCase().replace(/[\s\-_.()]/g, '');
+  const el = (tag, text, cls) => { const e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; };
+
+  async function load(name) {
+    for (const file of [`data/${name}.json`, `data/sample-${name}.json`]) {
+      try {
+        const r = await fetch(file, { cache: 'no-cache' });
+        if (!r.ok) continue;
+        return { data: await r.json(), sample: file.includes('sample-') };
+      } catch (e) { /* 다음 파일 */ }
+    }
+    return null;
+  }
+
+  async function init() {
+    const [f, p] = await Promise.all([load('facts'), load('phones')]);
+    if (!f || !p) { $('status').textContent = '자료를 불러오지 못했어요. 통신사 고객센터 114에 물어보세요.'; return; }
+    facts = f.data; phones = p.data;
+    if (f.sample || p.sample) $('sampleNote').hidden = false;
+    $('status').textContent = facts.shutdown.status;
+    $('summary').textContent = facts.shutdown.summary;
+    const ds = $('dates');
+    [...facts.shutdown.dates].sort((a, b) => a.date.localeCompare(b.date)).forEach((d) => {
+      const li = el('li');
+      li.append(el('span', d.confirmed ? '확정 ' : '예정 ', 'tag ' + (d.confirmed ? 'yes' : 'no')), document.createTextNode(`${d.date} ${d.event}`));
+      ds.append(li);
+    });
+    const src = $('sources');
+    facts.sources.forEach((s) => {
+      const li = el('li'); const a = el('a', s.title); a.href = s.url; a.target = '_blank'; a.rel = 'noopener';
+      li.append(a); if (!s.opened) li.append(document.createTextNode(' (원문 확인 전)'));
+      src.append(li);
+    });
+    $('updated').textContent = facts.updated;
+  }
+
+  /* 자동완성 */
+  const q = $('q'), list = $('list');
+  function search(text) {
+    const n = norm(text); if (!n) return [];
+    return phones.filter((p) => [p.model, ...(p.aliases || [])].some((s) => norm(s).includes(n))).slice(0, 6);
+  }
+  function closeList() { list.hidden = true; q.setAttribute('aria-expanded', 'false'); active = -1; }
+  function renderList() {
+    list.replaceChildren();
+    shown = search(q.value);
+    if (!shown.length) return closeList();
+    shown.forEach((p, i) => {
+      const li = el('li', p.model); li.id = 'opt' + i; li.setAttribute('role', 'option'); li.setAttribute('aria-selected', 'false');
+      const alias = (p.aliases || []).slice(0, 2).join(', ');
+      if (alias) li.append(el('small', alias));
+      li.addEventListener('mousedown', (e) => { e.preventDefault(); pick(p); });
+      list.append(li);
+    });
+    list.hidden = false; q.setAttribute('aria-expanded', 'true'); active = -1;
+  }
+  function mark(i) {
+    [...list.children].forEach((li, k) => li.setAttribute('aria-selected', String(k === i)));
+    active = i; if (i >= 0) { q.setAttribute('aria-activedescendant', 'opt' + i); list.children[i].scrollIntoView({ block: 'nearest' }); }
+  }
+  function pick(p) {
+    chosen = p; q.value = p.model; closeList();
+    $('chosen').textContent = `선택한 폰: ${p.model}`; $('chosen').hidden = false;
+  }
+  q.addEventListener('input', () => { chosen = null; $('chosen').hidden = true; renderList(); });
+  q.addEventListener('focus', () => { if (q.value && !chosen) renderList(); });
+  q.addEventListener('blur', closeList);
+  q.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' && shown.length) { e.preventDefault(); if (list.hidden) renderList(); mark(Math.min(active + 1, shown.length - 1)); }
+    else if (e.key === 'ArrowUp' && shown.length) { e.preventDefault(); mark(Math.max(active - 1, 0)); }
+    else if (e.key === 'Enter' && active >= 0 && !list.hidden) { e.preventDefault(); pick(shown[active]); }
+    else if (e.key === 'Escape') closeList();
+  });
+  $('dontKnow').addEventListener('click', () => { chosen = null; q.value = ''; $('chosen').hidden = true; closeList(); showResult(null); });
+
+  /* 결과 */
+  const radio = (name) => document.querySelector(`input[name="${name}"]:checked`).value;
+  let shareText = '';
+
+  $('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!facts) return;
+    if (!chosen) {
+      const n = norm(q.value);
+      const exact = n && phones.find((p) => [p.model, ...(p.aliases || [])].some((s) => norm(s) === n));
+      if (exact) pick(exact);
+      else if (!n) { q.focus(); $('chosen').textContent = '기종을 쓰거나, 모르면 아래 \'기종을 모르겠어요\'를 눌러 주세요.'; $('chosen').hidden = false; return; }
+    }
+    showResult(chosen);
+  });
+
+  function showResult(phone) {
+    const carrier = radio('carrier'), plan = radio('plan');
+    const lv = phone ? LEVEL[phone.affected] || LEVEL['영향 가능'] : LEVEL['영향 가능'];
+    const box = $('result'); box.replaceChildren();
+    const card = el('div', null, 'card'); card.dataset.level = lv.key;
+    card.append(el('p', lv.word, 'verdict'));
+    const name = phone ? phone.model : (q.value.trim() || '기종 모름');
+    card.append(el('p', `${name}, ${CARRIER_LABEL[carrier]}${carrier === '알뜰폰' ? '(모름 포함)' : ''}`, 'which'));
+    const reason = phone ? phone.note : '목록에 없는 폰이에요. 아래 순서대로 직접 확인해 보세요.';
+    card.append(el('p', reason, 'reason'));
+
+    const cn = facts.carriers[carrier];
+    if (cn) { const b = el('div', null, 'block'); b.append(el('h3', '통신사 안내'), el('p', cn.note)); card.append(b); }
+
+    if (plan === 'yes') card.append(el('p', '3G 요금제는 요금제도 함께 바꿔야 해요. 폰만 바꾸면 계속 3G 요금제로 남을 수 있어요.', 'plan'));
+    else if (plan === 'unknown') card.append(el('p', '요금제는 114에 전화하면 바로 알 수 있어요.', 'plan'));
+
+    if (!phone) {
+      const b = el('div', null, 'block'); b.append(el('h3', '설정에서 확인하기'));
+      const ol = el('ol'); facts.how_to_check.forEach((t) => ol.append(el('li', t))); b.append(ol); card.append(b);
+      card.append(el('p', '잘 모르겠으면 통신사 고객센터 114에 전화하세요.', 'call'));
+    } else if (lv.key !== 'good') {
+      const b = el('div', null, 'block'); b.append(el('h3', '해야 할 일'));
+      const ol = el('ol'); facts.what_to_do.forEach((t) => ol.append(el('li', t))); b.append(ol); card.append(b);
+    }
+
+    shareText = `[3G 종료 점검] ${name} (${CARRIER_LABEL[carrier]}): ${lv.word}. ${reason}` +
+      (plan === 'yes' ? ' 3G 요금제라서 요금제도 바꿔야 해요.' : '') + ` 점검하기: ${location.origin}${location.pathname}`;
+    const share = el('div', null, 'share');
+    const sb = el('button', '가족 단톡방에 결과 보내기'); sb.type = 'button';
+    const toast = el('p', '', 'toast'); toast.setAttribute('role', 'status');
+    sb.addEventListener('click', async () => {
+      if (navigator.share) { try { await navigator.share({ title: '3G 종료 점검 결과', text: shareText }); return; } catch (e) { if (e.name === 'AbortError') return; } }
+      try { await navigator.clipboard.writeText(shareText); toast.textContent = '결과 문장을 복사했어요. 단톡방에 붙여 넣으세요.'; }
+      catch (e) { toast.textContent = '복사하지 못했어요. 아래 글을 눌러 직접 복사하세요.'; const t = el('p', shareText); share.append(t); }
+    });
+    share.append(sb, toast);
+    card.append(share);
+    box.append(card); box.hidden = false;
+    box.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    box.focus({ preventScroll: true });
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
